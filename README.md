@@ -9,6 +9,7 @@ Add path
     # /api/index.js
     # Add function in API object like example
 ```
+
 Call method
 ```js
     // /screens/example
@@ -18,4 +19,10 @@ Call method
     }catch(err){
         // ...
     }
+```
+
+## SCREENS
+```js
+    // Create new screens in screens folder, and import it in navigators/index, like : 
+    <Stack.Screen name="example" component={ExampleScreen} options={{headerShown: false}} />
 ```
