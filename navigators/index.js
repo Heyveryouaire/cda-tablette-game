@@ -1,18 +1,25 @@
-import React from 'react'
+import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack'
-import { NavigationContainer } from '@react-navigation/native'
 
-import ExampleScreen from '../screens/ExampleScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import ExampleScreen from '../screens/ExampleScreen';
+import GamesNavigation from './../navigators/GamesNavigation';
 
 export default function Navigator() {
-    const Stack = createStackNavigator()
+    const Tab = createBottomTabNavigator();
 
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="example" component={ExampleScreen} options={{headerShown: false}} />
-            </Stack.Navigator>
+            <Tab.Navigator>
+                <Tab.Screen name="example" component={ExampleScreen} options={{headerShown: false}} />
+                {/* <Tab.Screen name="home" component={HomeScreen} options={{headerShown: false}} /> */}
+                <Tab.Screen name="Jeux" component={GamesNavigation} options={{headerShown: false}} />
+                {/* <Tab.Screen name="messagerie" component={MessagerieScreen} options={{headerShown: false}} />
+                <Tab.Screen name="setting" component={SettingScreen} options={{headerShown: false}} />
+                <Tab.Screen name="help" component={HelpsScreen} options={{headerShown: false}} /> */}
+            </Tab.Navigator>
         </NavigationContainer>
     )
 }
